@@ -1,0 +1,32 @@
+options:
+  - name: developer_name
+    description: Your name.
+    question: "Please input your name:"
+  - name: project_name
+    description: Project name.
+    question: "Please input your project's name:"
+  - name: module_name
+    description: Module name
+    question: "Please input the module name:"
+  - name: output_path
+    description: Output path
+    question: "Please input the path for output files:"
+files:
+  - template: Templates/Code/Presentation/ViewController.swift.stencil
+    path: "{{ output_path }}/{{ module_name }}/Presentation/{{ module_name }}ViewController.swift"
+  - template: Templates/Code/Presentation/Presenter.swift.stencil
+    path: "{{ output_path }}/{{ module_name }}/Presentation/{{ module_name }}Presenter.swift"
+  - template: Templates/Code/Domain/UseCase.swift.stencil
+    path: "{{ output_path }}/{{ module_name }}/Domain/{{ module_name }}UseCase .swift"
+  - template: Templates/Code/Domain/Translater.swift.stencil
+    path: "{{ output_path }}/{{ module_name }}/Domain/{{ module_name }}Translater.swift"
+  - template: Templates/Code/Domain/Model.swift.stencil
+    path: "{{ output_path }}/{{ module_name }}/Domain/{{ module_name }}Model.swift"
+  - template: Templates/Code/Data/Repository.swift.stencil
+    path: "{{ output_path }}/{{ module_name }}/Data/{{ module_name }}Repository.swift"
+  - template: Templates/Code/Data/DataStore.swift.stencil
+    path: "{{ output_path }}/{{ module_name }}/Data/{{ module_name }}DataStore.swift"
+  - template: Templates/Code/Data/Entity.swift.stencil
+    path: "{{ output_path }}/{{ module_name }}/Data/{{ module_name }}Entity.swift"
+  - template: Templates/Code/Builder/Builder.swift.stencil
+    path: "{{ output_path }}/{{ module_name }}/Builder/{{ module_name }}Builder.swift"

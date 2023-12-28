@@ -22,6 +22,7 @@ struct CleanBuilder {
         viewController.presenterInput = presenter
         presenter.viewOutput = viewController
         useCase.presenterOutput = presenter
+        repository.useCase = useCase
 
         return viewController
     }

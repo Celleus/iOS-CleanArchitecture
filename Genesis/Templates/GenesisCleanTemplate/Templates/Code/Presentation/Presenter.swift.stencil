@@ -1,0 +1,54 @@
+//
+//  {{ module_name }}Presenter
+//  {{ project_name }}
+//
+//  Created by {{ developer_name }} on {{ date }}.
+//
+
+import Foundation
+
+protocol {{ module_name }}PresenterInput: AnyObject {
+    // MARK: Methods called from View
+    func fromView()
+}
+
+protocol {{ module_name }}PresenterOutput: AnyObject {
+    // MARK: Callback from UseCase
+    func forUseCase()
+}
+
+// MARK: - {{ module_name }}Presenter
+
+final class {{ module_name }}Presenter {
+    
+    // MARK: Architecture properties
+
+    private var useCase: {{ module_name }}UseCaseInput!
+    var viewOutput: {{ module_name }}ViewOutput?
+    
+    // MARK: Instance methods
+
+    init(useCase: {{ module_name }}UseCaseInput) {
+        self.useCase = useCase
+    }
+    
+    // MARK: Other properties
+    
+    // MARK: Other methods
+}
+
+// MARK: - {{ module_name }}PresenterInput
+
+extension {{ module_name }}Presenter: {{ module_name }}PresenterInput {
+    func fromView() {
+        useCase.fromPresenter()
+    }
+}
+
+// MARK: - {{ module_name }}PresenterOutput
+
+extension {{ module_name }}Presenter: {{ module_name }}PresenterOutput {
+    func forUseCase() {
+        viewOutput?.forPresenter()
+    }
+}

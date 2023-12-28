@@ -12,6 +12,7 @@ import Foundation
 protocol CleanRepositoryInput: AnyObject {
     // MARK: Methods called from UseCase
     func fromUseCase()
+    func createTodo(_ title: String)
 }
 
 // MARK: - CleanRepository
@@ -41,7 +42,10 @@ final class CleanRepository {
 
 extension CleanRepository: CleanRepositoryInput {
     func fromUseCase() {
-        dataStore.getDatas()
-        useCase?.forRepository()
+        let entities = dataStore.getDatas()
+        useCase?.forRepository(entities)
+    }
+    func createTodo(_ title: String) {
+        dataStore.createTodo(title)
     }
 }

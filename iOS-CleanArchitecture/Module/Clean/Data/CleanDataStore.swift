@@ -10,7 +10,8 @@ import Foundation
 // MARK: - CleanDataStoreInterface
 
 protocol CleanDataStoreInterface {
-    func getDatas() -> [Todo]
+    func getDatas() -> [CleanEntity]
+    func createTodo(_ title: String)
 }
 
 // MARK: - CleanDataStore
@@ -31,7 +32,17 @@ final class CleanDataStore: CleanDataStoreInterface {
     
     // MARK: Other methods
     
-    func getDatas() -> [Todo] {
-        return []
+    func getDatas() -> [CleanEntity] {
+        var entities: [CleanEntity] = []
+        for data in Todo.all(isDelete) {
+            entities.append(CleanEntity(title: data.title))
+        }
+        return entities
+    }
+    
+    func createTodo(_ title: String) {
+        let todo = Todo()
+        todo.title = title
+        todo.create()
     }
 }

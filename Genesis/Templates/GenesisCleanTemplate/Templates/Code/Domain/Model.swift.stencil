@@ -1,0 +1,19 @@
+//
+//  {{ module_name }}Model
+//  {{ project_name }}
+//
+//  Created by {{ developer_name }} on {{ date }}.
+//
+
+import Foundation
+
+class {{ module_name }}Model {
+    // {{ module_name }}Entityにあるデータの中から表示に必要なものだけ記載する
+    var title : String = ""
+    
+    init() {}
+        
+    init(data : {{ module_name }}Entity) {
+        self.title = data.title
+    }
+}

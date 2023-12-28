@@ -10,11 +10,12 @@ import Foundation
 protocol CleanPresenterInput: AnyObject {
     // MARK: Methods called from View
     func fromView()
+    func createTodo(_ title: String)
 }
 
 protocol CleanPresenterOutput: AnyObject {
     // MARK: Callback from UseCase
-    func forUseCase()
+    func forUseCase(_ models: [CleanModel])
 }
 
 // MARK: - CleanPresenter
@@ -43,12 +44,16 @@ extension CleanPresenter: CleanPresenterInput {
     func fromView() {
         useCase.fromPresenter()
     }
+    func createTodo(_ title: String) {
+        useCase.createTodo(title)
+    }
 }
 
 // MARK: - CleanPresenterOutput
 
 extension CleanPresenter: CleanPresenterOutput {
-    func forUseCase() {
-        viewOutput?.forPresenter()
+    func forUseCase(_ models: [CleanModel]) {
+        print("forUseCase models:\(models)")
+        viewOutput?.forPresenter(models)
     }
 }
