@@ -20,6 +20,10 @@
 		C762E8382B3C4C3000DA832E /* CleanRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C762E8372B3C4C3000DA832E /* CleanRepository.swift */; };
 		C762E83B2B3C4C4500DA832E /* CleanDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = C762E83A2B3C4C4500DA832E /* CleanDataStore.swift */; };
 		C762E83D2B3C4C5300DA832E /* CleanEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = C762E83C2B3C4C5300DA832E /* CleanEntity.swift */; };
+		C7AA0CB62B3D5CC300BDDDE8 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = C7AA0CB52B3D5CC300BDDDE8 /* Realm */; };
+		C7AA0CB82B3D5CC300BDDDE8 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = C7AA0CB72B3D5CC300BDDDE8 /* RealmSwift */; };
+		C7AA0CBB2B3D5EA100BDDDE8 /* Todo.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7AA0CBA2B3D5EA100BDDDE8 /* Todo.swift */; };
+		C7AA0CBD2B3D643900BDDDE8 /* CleanModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7AA0CBC2B3D643900BDDDE8 /* CleanModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +42,8 @@
 		C762E8372B3C4C3000DA832E /* CleanRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CleanRepository.swift; sourceTree = "<group>"; };
 		C762E83A2B3C4C4500DA832E /* CleanDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CleanDataStore.swift; sourceTree = "<group>"; };
 		C762E83C2B3C4C5300DA832E /* CleanEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CleanEntity.swift; sourceTree = "<group>"; };
+		C7AA0CBA2B3D5EA100BDDDE8 /* Todo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Todo.swift; sourceTree = "<group>"; };
+		C7AA0CBC2B3D643900BDDDE8 /* CleanModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CleanModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +51,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C7AA0CB82B3D5CC300BDDDE8 /* RealmSwift in Frameworks */,
+				C7AA0CB62B3D5CC300BDDDE8 /* Realm in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -72,10 +80,8 @@
 			children = (
 				C762E8192B3C3F8A00DA832E /* AppDelegate.swift */,
 				C762E81B2B3C3F8A00DA832E /* SceneDelegate.swift */,
-				C762E82F2B3C4B2000DA832E /* CleanBuilder.swift */,
-				C762E8312B3C4BEB00DA832E /* Presentation */,
-				C762E8322B3C4BFA00DA832E /* Domain */,
-				C762E8392B3C4C3800DA832E /* Data */,
+				C7AA0CB92B3D5E9400BDDDE8 /* Realm */,
+				C7AA0CC12B3D6C3A00BDDDE8 /* Module */,
 				C762E8222B3C3F8C00DA832E /* Assets.xcassets */,
 				C762E8242B3C3F8C00DA832E /* LaunchScreen.storyboard */,
 				C762E8272B3C3F8C00DA832E /* Info.plist */,
@@ -98,6 +104,7 @@
 			children = (
 				C762E8332B3C4C0E00DA832E /* CleanUseCase .swift */,
 				C762E8352B3C4C1F00DA832E /* CleanTranslater.swift */,
+				C7AA0CBC2B3D643900BDDDE8 /* CleanModel.swift */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -110,6 +117,41 @@
 				C762E83C2B3C4C5300DA832E /* CleanEntity.swift */,
 			);
 			path = Data;
+			sourceTree = "<group>";
+		};
+		C7AA0CB92B3D5E9400BDDDE8 /* Realm */ = {
+			isa = PBXGroup;
+			children = (
+				C7AA0CBA2B3D5EA100BDDDE8 /* Todo.swift */,
+			);
+			path = Realm;
+			sourceTree = "<group>";
+		};
+		C7AA0CC02B3D680500BDDDE8 /* Builder */ = {
+			isa = PBXGroup;
+			children = (
+				C762E82F2B3C4B2000DA832E /* CleanBuilder.swift */,
+			);
+			path = Builder;
+			sourceTree = "<group>";
+		};
+		C7AA0CC12B3D6C3A00BDDDE8 /* Module */ = {
+			isa = PBXGroup;
+			children = (
+				C7AA0CC22B3D707A00BDDDE8 /* Clean */,
+			);
+			path = Module;
+			sourceTree = "<group>";
+		};
+		C7AA0CC22B3D707A00BDDDE8 /* Clean */ = {
+			isa = PBXGroup;
+			children = (
+				C7AA0CC02B3D680500BDDDE8 /* Builder */,
+				C762E8312B3C4BEB00DA832E /* Presentation */,
+				C762E8322B3C4BFA00DA832E /* Domain */,
+				C762E8392B3C4C3800DA832E /* Data */,
+			);
+			path = Clean;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -128,6 +170,10 @@
 			dependencies = (
 			);
 			name = "iOS-CleanArchitecture";
+			packageProductDependencies = (
+				C7AA0CB52B3D5CC300BDDDE8 /* Realm */,
+				C7AA0CB72B3D5CC300BDDDE8 /* RealmSwift */,
+			);
 			productName = "iOS-CleanArchitecture";
 			productReference = C762E8162B3C3F8A00DA832E /* iOS-CleanArchitecture.app */;
 			productType = "com.apple.product-type.application";
@@ -156,6 +202,9 @@
 				Base,
 			);
 			mainGroup = C762E80D2B3C3F8A00DA832E;
+			packageReferences = (
+				C7AA0CB42B3D5CC300BDDDE8 /* XCRemoteSwiftPackageReference "realm-swift" */,
+			);
 			productRefGroup = C762E8172B3C3F8A00DA832E /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -183,12 +232,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C7AA0CBB2B3D5EA100BDDDE8 /* Todo.swift in Sources */,
 				C762E83D2B3C4C5300DA832E /* CleanEntity.swift in Sources */,
 				C762E8362B3C4C1F00DA832E /* CleanTranslater.swift in Sources */,
 				C762E8342B3C4C0E00DA832E /* CleanUseCase .swift in Sources */,
 				C762E81E2B3C3F8A00DA832E /* CleanViewController.swift in Sources */,
 				C762E8382B3C4C3000DA832E /* CleanRepository.swift in Sources */,
 				C762E81A2B3C3F8A00DA832E /* AppDelegate.swift in Sources */,
+				C7AA0CBD2B3D643900BDDDE8 /* CleanModel.swift in Sources */,
 				C762E83B2B3C4C4500DA832E /* CleanDataStore.swift in Sources */,
 				C762E82E2B3C431A00DA832E /* CleanPresenter.swift in Sources */,
 				C762E8302B3C4B2000DA832E /* CleanBuilder.swift in Sources */,
@@ -349,7 +400,7 @@
 				INFOPLIST_FILE = "iOS-CleanArchitecture/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -377,7 +428,7 @@
 				INFOPLIST_FILE = "iOS-CleanArchitecture/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -415,6 +466,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		C7AA0CB42B3D5CC300BDDDE8 /* XCRemoteSwiftPackageReference "realm-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-swift.git";
+			requirement = {
+				kind = upToNextMinorVersion;
+				minimumVersion = 10.45.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		C7AA0CB52B3D5CC300BDDDE8 /* Realm */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C7AA0CB42B3D5CC300BDDDE8 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = Realm;
+		};
+		C7AA0CB72B3D5CC300BDDDE8 /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C7AA0CB42B3D5CC300BDDDE8 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = RealmSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = C762E80E2B3C3F8A00DA832E /* Project object */;
 }

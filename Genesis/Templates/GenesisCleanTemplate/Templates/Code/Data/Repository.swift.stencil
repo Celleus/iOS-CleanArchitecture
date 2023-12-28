@@ -1,0 +1,47 @@
+//
+//  {{ module_name }}Repository
+//  {{ project_name }}
+//
+//  Created by {{ developer_name }} on {{ date }}.
+//
+
+import Foundation
+
+// MARK: - {{ module_name }}RepositoryInterface
+
+protocol {{ module_name }}RepositoryInput: AnyObject {
+    // MARK: Methods called from UseCase
+    func fromUseCase()
+}
+
+// MARK: - {{ module_name }}Repository
+
+final class {{ module_name }}Repository {
+    
+    // MARK: Architecture properties
+
+    private var dataStore: {{ module_name }}DataStore!
+    var useCase: {{ module_name }}UseCaseOutput?
+    
+    // MARK: Instance properties
+
+    
+    // MARK: Instance methods
+
+    init(dataStore: {{ module_name }}DataStore) {
+        self.dataStore = dataStore
+    }
+
+    // MARK: Other properties
+    
+    // MARK: Other methods
+}
+
+// MARK: - {{ module_name }}RepositoryInput
+
+extension {{ module_name }}Repository: {{ module_name }}RepositoryInput {
+    func fromUseCase() {
+        let entities = dataStore.getDatas()
+        useCase?.forRepository()
+    }
+}

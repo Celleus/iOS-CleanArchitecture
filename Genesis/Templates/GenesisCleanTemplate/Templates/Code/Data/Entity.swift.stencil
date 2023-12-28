@@ -1,0 +1,12 @@
+//
+//  {{ module_name }}Entity
+//  {{ project_name }}
+//
+//  Created by {{ developer_name }} on {{ date }}.
+//
+
+import Foundation
+
+struct {{ module_name }}Entity: Codable {
+    let title: String
+}

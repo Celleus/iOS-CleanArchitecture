@@ -1,0 +1,23 @@
+//
+//  {{ module_name }}Translater
+//  {{ project_name }}
+//
+//  Created by {{ developer_name }} on {{ date }}.
+//
+
+import Foundation
+
+class {{ module_name }}Translater {
+    
+    static func generate(_ entities: [{{ module_name }}Entity]) -> [{{ module_name }}Model] {
+        
+        var models = [{{ module_name }}Model]()
+        
+        entities.forEach { data -> () in
+            let model = {{ module_name }}Model(data: data)
+            models.append(model)
+        }
+        
+        return models
+    }
+}

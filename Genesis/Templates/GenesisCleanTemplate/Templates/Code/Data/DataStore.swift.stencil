@@ -1,0 +1,38 @@
+//
+//  {{ module_name }}DataStore
+//  {{ project_name }}
+//
+//  Created by {{ developer_name }} on {{ date }}.
+//
+
+import Foundation
+
+// MARK: - {{ module_name }}DataStoreInterface
+
+protocol {{ module_name }}DataStoreInterface {
+    func getDatas() -> [{{ module_name }}Entity]
+}
+
+// MARK: - {{ module_name }}DataStore
+
+final class {{ module_name }}DataStore: {{ module_name }}DataStoreInterface {
+    
+    // MARK: Instance properties
+
+    let isDelete: Bool
+    
+    // MARK: Instance methods
+
+    init(_ isDelete: Bool = false) {
+        self.isDelete = isDelete
+    }
+
+    // MARK: Other properties
+    
+    // MARK: Other methods
+    
+    func getDatas() -> [{{ module_name }}Entity] {
+        var entities: [{{ module_name }}Entity] = []
+        return entities
+    }
+}

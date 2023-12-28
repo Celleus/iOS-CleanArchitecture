@@ -1,0 +1,41 @@
+//
+//  {{ module_name }}ViewController
+//  {{ project_name }}
+//
+//  Created by {{ developer_name }} on {{ date }}.
+//
+
+
+import UIKit
+
+protocol {{ module_name }}ViewOutput: AnyObject {
+    // MARK: Callback from Presenter
+    func forPresenter()
+}
+
+class {{ module_name }}ViewController: UIViewController {
+
+    // MARK: Architecture properties
+    
+    var presenterInput: {{ module_name }}PresenterInput!
+    
+    // MARK: View Life-Cycle methods
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    }
+    
+    // MARK: Other properties
+
+    // MARK: Other methods
+    
+    func didTapButton() {
+        presenterInput.fromView()
+    }
+}
+
+// MARK: - {{ module_name }}ViewOutput
+
+extension {{ module_name }}ViewController: {{ module_name }}ViewOutput {
+    func forPresenter() {}
+}

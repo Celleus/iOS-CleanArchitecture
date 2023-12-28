@@ -1,0 +1,29 @@
+//
+//  {{ module_name }}Builder
+//  {{ project_name }}
+//
+//  Created by {{ developer_name }} on {{ date }}.
+//
+
+import UIKit
+import Foundation
+
+struct {{ module_name }}Builder {
+    typealias ViewController = {{ module_name }}ViewController
+    
+    static func build() -> ViewController {
+        let viewController = UIStoryboard(name: "{{ module_name }}ViewController", bundle: nil).instantiateInitialViewController() as! {{ module_name }}ViewController
+
+        let dataStore      = {{ module_name }}DataStore()
+        let repository     = {{ module_name }}Repository(dataStore: dataStore)
+        let useCase        = {{ module_name }}UseCase(repository: repository)
+        let presenter      = {{ module_name }}Presenter(useCase: useCase)
+        
+        viewController.presenterInput = presenter
+        presenter.viewOutput = viewController
+        useCase.presenterOutput = presenter
+        repository.useCase = useCase
+
+        return viewController
+    }
+}

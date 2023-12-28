@@ -1,0 +1,52 @@
+//
+//  {{ module_name }}UseCase
+//  {{ project_name }}
+//
+//  Created by {{ developer_name }} on {{ date }}.
+//
+
+iimport Foundation
+
+protocol {{ module_name }}UseCaseInput: AnyObject {
+    // MARK: Methods called from presenter
+    func fromPresenter()
+}
+
+protocol {{ module_name }}UseCaseOutput: AnyObject {
+    // MARK: Callback from UseCase
+    func forRepository()
+}
+
+final class {{ module_name }}UseCase {
+    
+    // MARK: Architecture properties
+    
+    private var repository: {{ module_name }}RepositoryInput!
+    var presenterOutput: {{ module_name }}PresenterOutput?
+    
+    // MARK: Instance methods
+
+    init(repository: {{ module_name }}RepositoryInput) {
+        self.repository = repository
+    }
+
+    // MARK: Other properties
+    
+    // MARK: Other methods
+}
+
+// MARK: - {{ module_name }}UseCaseInput
+
+extension {{ module_name }}UseCase: {{ module_name }}UseCaseInput {
+    func fromPresenter() {
+        repository.fromUseCase()
+    }
+}
+
+// MARK: - {{ module_name }}UseCaseOutput
+
+extension {{ module_name }}UseCase: {{ module_name }}UseCaseOutput {
+    func forRepository() {
+        presenterOutput?.forUseCase()
+    }
+}
